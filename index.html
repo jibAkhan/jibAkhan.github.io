@@ -4,44 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jibran Khan</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+            background-color: #f5efe6; /* Off-white brownish rich color */
+            font-family: "Palatino", "Palatino Linotype", "Book Antiqua", serif;
+            color: #2d2b2a;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .section {
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 2px solid #2d2b2a;
+        }
+        a {
+            color: #704214;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen p-6">
-
-    <h1 class="text-5xl font-bold mt-10">Jibran Khan</h1>
-
-    <nav class="mt-5">
-        <a href="#about" class="mx-4 text-lg hover:underline">About</a>
-        <a href="#projects" class="mx-4 text-lg hover:underline">Projects</a>
-        <a href="resume.pdf" class="mx-4 text-lg hover:underline">Resume</a>
-    </nav>
-
-    <section id="about" class="mt-10 max-w-2xl text-center">
-        <h2 class="text-3xl font-semibold">About Me</h2>
-        <p class="mt-4 text-lg text-gray-300">
-            Cybersecurity & Cloud Engineer | Neural Networks | Arch Linux Enthusiast
-        </p>
-    </section>
-
-    <section id="projects" class="mt-10 max-w-2xl text-center">
-        <h2 class="text-3xl font-semibold">Projects</h2>
-        <ul class="mt-4 text-lg text-gray-300">
-            <li>• Project 1: <a href="#" class="text-blue-400 hover:underline">Project Title</a></li>
-            <li>• Project 2: <a href="#" class="text-blue-400 hover:underline">Project Title</a></li>
-            <li>• Project 3: <a href="#" class="text-blue-400 hover:underline">Project Title</a></li>
-        </ul>
-    </section>
-
-    <footer class="mt-10">
-        <a href="mailto:jibranak37@gmail.com" class="text-blue-400 hover:underline">Email</a> |
-        <a href="https://linkedin.com/in/jibkhan" class="text-blue-400 hover:underline">LinkedIn</a> |
-        <a href="https://github.com/jibAkhan" class="text-blue-400 hover:underline">GitHub</a>
-    </footer>
-
+<body>
+    <div class="container">
+        <h1>Jibran Khan</h1>
+        <p>US Citizen | (626) 445-7791 | <a href="mailto:jibranak37@gmail.com">jibranak37@gmail.com</a></p>
+        <p><a href="https://linkedin.com/in/jibkhan">LinkedIn</a> | <a href="https://github.com/jibAkhan">GitHub</a></p>
+        
+        <div class="section" id="about">
+            <h2>About</h2>
+            <p>Cloud Infrastructure Intern experienced in managing Azure resources, writing Terraform scripts, and optimizing virtual machines. Passionate about AI, security, and cloud technology.</p>
+        </div>
+        
+        <div class="section" id="projects">
+            <h2>Projects</h2>
+            <p><strong>Facial Recognition Script</strong> - Python, OpenCV</p>
+            <p>Developed a facial recognition system using deep-metric learning with 99.38% accuracy.</p>
+            <p><strong>Custom Text Editor</strong> - C</p>
+            <p>Built a lightweight text editor from scratch, implementing syntax highlighting and search features.</p>
+        </div>
+        
+        <div class="section" id="resume">
+            <h2>Resume</h2>
+            <p><a href="resume.pdf">Download Resume (PDF)</a></p>
+        </div>
+    </div>
 </body>
 </html>
