@@ -4,62 +4,301 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jibran Khan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html {
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+        }
+
         body {
-            background-color: #f5efe6; /* Off-white brownish rich color */
-            font-family: "Palatino", "Palatino Linotype", "Book Antiqua", serif;
-            color: #2d2b2a;
-            margin: 0;
-            padding: 0;
-            text-align: center;
+            background-color: #faf8f2;
+            color: #222;
+            font-family: "EB Garamond", "Palatino Linotype", Palatino, serif;
+            line-height: 1.65;
         }
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
+
+        .page {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 3rem 2.5rem 4rem;
         }
-        h1 {
-            font-size: 36px;
-            font-weight: bold;
-        }
-        .section {
-            margin-top: 40px;
-            padding: 20px;
-            border-top: 2px solid #2d2b2a;
-        }
+
         a {
-            color: #704214;
+            color: #222;
             text-decoration: none;
-            font-weight: bold;
+            border-bottom: 1px solid #bbb;
         }
-        a:hover {
-            text-decoration: underline;
+        a:hover { border-bottom-color: #222; }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 2rem 0;
+        }
+
+        /* ── Top: name + photo + contact ── */
+        .top {
+            display: grid;
+            grid-template-columns: 170px 1fr;
+            gap: 2.2rem;
+            align-items: start;
+        }
+
+        .portrait {
+            width: 170px;
+            height: 200px;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .intro h1 {
+            font-size: 2.4rem;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            line-height: 1.15;
+            margin-bottom: 0.15em;
+        }
+
+        .intro .tagline {
+            font-style: italic;
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 0.8em;
+        }
+
+        .contact-row {
+            font-size: 0.85rem;
+            color: #777;
+            line-height: 1.7;
+        }
+        .contact-row a { color: #777; border-bottom-color: #ccc; }
+        .contact-row a:hover { color: #222; border-bottom-color: #222; }
+        .dot { margin: 0 0.4em; color: #ccc; }
+
+        .nav {
+            margin-top: 0.7em;
+            font-size: 0.88rem;
+        }
+        .nav a {
+            margin-right: 1.4em;
+            border-bottom: none;
+            color: #888;
+            letter-spacing: 0.02em;
+        }
+        .nav a:hover { color: #222; }
+
+        /* ── Section headings ── */
+        h2 {
+            font-variant: small-caps;
+            font-weight: 400;
+            font-size: 1.15rem;
+            letter-spacing: 0.1em;
+            text-transform: lowercase;
+            margin-bottom: 0.7em;
+        }
+
+        /* ── Bio ── */
+        .bio {
+            max-width: 720px;
+        }
+        .bio p {
+            margin-bottom: 0.9em;
+            font-size: 1.02rem;
+        }
+
+        /* ── Two-column lower sections ── */
+        .columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .column section {
+            margin-bottom: 1.8rem;
+        }
+
+        /* ── Career timeline (not resume bullets) ── */
+        .role {
+            margin-bottom: 1em;
+        }
+        .role-title {
+            font-weight: 500;
+            font-size: 0.97rem;
+        }
+        .role-meta {
+            font-size: 0.85rem;
+            color: #888;
+        }
+        .role-meta em { font-style: italic; }
+
+        /* ── Skills as compact groups ── */
+        .skill-group {
+            margin-bottom: 0.5em;
+            font-size: 0.92rem;
+        }
+        .skill-label {
+            font-weight: 500;
+        }
+        .skill-items {
+            color: #555;
+        }
+
+        /* ── Certs inline ── */
+        .certs {
+            font-size: 0.92rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* ── Education ── */
+        .edu { font-size: 0.95rem; }
+        .edu strong { font-weight: 500; }
+        .edu .school { color: #666; font-size: 0.9rem; }
+
+        /* ── Footer ── */
+        footer {
+            margin-top: 2.5rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.75rem;
+            color: #bbb;
+            font-style: italic;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 750px) {
+            .page { padding: 2rem 1.3rem 3rem; }
+            .top {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .portrait { width: 140px; height: 165px; }
+            .intro h1 { font-size: 2rem; }
+            .columns {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Jibran Khan</h1>
-        <p>US Citizen | (626) 445-7791 | <a href="mailto:jibranak37@gmail.com">jibranak37@gmail.com</a></p>
-        <p><a href="https://linkedin.com/in/jibkhan">LinkedIn</a> | <a href="https://github.com/jibAkhan">GitHub</a></p>
-        
-        <div class="section" id="about">
+    <div class="page">
+
+        <!-- ── Header ── -->
+        <div class="top">
+            <img src="portrait.jpg" alt="Jibran Khan" class="portrait">
+            <div class="intro">
+                <h1>Jibran Khan</h1>
+                <p class="tagline">Systems Integration &amp; Cloud Engineering</p>
+                <div class="contact-row">
+                    Houston, TX<br>
+                    <a href="mailto:jibranak37@gmail.com">jibranak37@gmail.com</a>
+                    <span class="dot">&middot;</span>(626) 445-7791
+                </div>
+                <div class="nav">
+                    <a href="https://linkedin.com/in/jibkhan">LinkedIn</a>
+                    <a href="https://github.com/jibAkhan">GitHub</a>
+
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- ── Bio ── -->
+        <section class="bio">
             <h2>About</h2>
-            <p>Cloud Infrastructure Intern experienced in managing Azure resources, writing Terraform scripts, and optimizing virtual machines. Passionate about AI, security, and cloud technology.</p>
+            <p>Jibran Khan is a Systems Integration Engineer at HermesCloud Technology Partners, where he architects enterprise integrations across Dynamics 365, ServiceNow, and Jira. He builds event-driven automation pipelines, designs API mapping protocols, and maintains the backend logic that keeps data consistent across CRM platforms and engineering tools.</p>
+            <p>Jibran has over five years of experience in cloud infrastructure, DevOps, and systems engineering. Prior to HermesCloud, he was a DevOps Engineer at Chief Technology Group for four years, where he developed Python automation frameworks, built serverless functions in C# on Azure, and managed infrastructure as code with Terraform and ARM Templates. He has also held contract roles as a Cloud Infrastructure Engineer at Stewart Title and a Technical Systems Engineer at ATS Corporation, and worked part-time as an AI Engineer at Outlier AI reviewing AI-generated code for correctness and security.</p>
+            <p>Jibran holds four professional certifications: AZ-104, AZ-900, CompTIA Network+, and CompTIA AI Security+. He has a BS in Computer Science from the University of Houston and is currently pursuing an MS in Computer Science at Georgia Institute of Technology.</p>
+        </section>
+
+        <hr>
+
+        <!-- ── Two columns: career + skills ── -->
+        <div class="columns">
+            <div class="column">
+                <section>
+                    <h2>Career</h2>
+
+                    <div class="role">
+                        <div class="role-title">Systems Integration Engineer</div>
+                        <div class="role-meta">HermesCloud Technology Partners <em>&middot; 2024&thinsp;&ndash;&thinsp;present</em></div>
+                    </div>
+
+                    <div class="role">
+                        <div class="role-title">Technical Systems Engineer</div>
+                        <div class="role-meta">ATS Corporation <em>&middot; 2024&thinsp;&ndash;&thinsp;2025</em></div>
+                    </div>
+
+                    <div class="role">
+                        <div class="role-title">AI Engineer</div>
+                        <div class="role-meta">Outlier AI <em>&middot; 2024</em></div>
+                    </div>
+
+                    <div class="role">
+                        <div class="role-title">DevOps Engineer</div>
+                        <div class="role-meta">Chief Technology Group <em>&middot; 2020&thinsp;&ndash;&thinsp;2024</em></div>
+                    </div>
+
+                    <div class="role">
+                        <div class="role-title">Cloud Infrastructure Engineer</div>
+                        <div class="role-meta">Stewart Title <em>&middot; 2022&thinsp;&ndash;&thinsp;2023</em></div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Education</h2>
+                    <div class="edu">
+                        <strong>M.S. Computer Science</strong> (in progress)<br>
+                        <span class="school">Georgia Institute of Technology</span>
+                    </div>
+                    <div class="edu" style="margin-top: 0.6em;">
+                        <strong>B.S. Computer Science</strong><br>
+                        <span class="school">University of Houston</span>
+                    </div>
+                </section>
+            </div>
+
+            <div class="column">
+                <section>
+                    <h2>Skills</h2>
+                    <div class="skill-group">
+                        <span class="skill-label">Languages:</span>
+                        <span class="skill-items">Python, C#, Java, C++, SQL, Bash, PowerShell, TypeScript</span>
+                    </div>
+                    <div class="skill-group">
+                        <span class="skill-label">Cloud &amp; DevOps:</span>
+                        <span class="skill-items">Azure, Terraform, Docker, CI/CD, ARM Templates, Azure Functions, Sentinel</span>
+                    </div>
+                    <div class="skill-group">
+                        <span class="skill-label">Networking:</span>
+                        <span class="skill-items">ExpressRoute, VPN, Hub-and-Spoke, NSGs, Azure Firewall, Entra ID, Zero Trust</span>
+                    </div>
+                    <div class="skill-group">
+                        <span class="skill-label">Platforms:</span>
+                        <span class="skill-items">.NET Core, Node.js, React, Dynamics 365, Power Platform, MongoDB</span>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Certifications</h2>
+                    <div class="certs">
+                        AZ-104 &middot; AZ-900 &middot; CompTIA Network+ &middot; CompTIA AI Security+
+                    </div>
+                </section>
+            </div>
         </div>
-        
-        <div class="section" id="projects">
-            <h2>Projects</h2>
-            <p><strong>Facial Recognition Script</strong> - Python, OpenCV</p>
-            <p>Developed a facial recognition system using deep-metric learning with 99.38% accuracy.</p>
-            <p><strong>Custom Text Editor</strong> - C</p>
-            <p>Built a lightweight text editor from scratch, implementing syntax highlighting and search features.</p>
-        </div>
-        
-        <div class="section" id="resume">
-            <h2>Resume</h2>
-            <p><a href="resume.pdf">Download Resume (PDF)</a></p>
-        </div>
+
+        <footer>
+            Jibran Khan &middot; 2025
+        </footer>
+
     </div>
 </body>
 </html>
